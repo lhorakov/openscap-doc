@@ -4,9 +4,9 @@
 
 image::vertical-logo.svg[align="center"]
 
-== Chapter 1
+== OpenSCAP Features
 
-abcd
+OpenSCAP verifies the presence of patches by using content produced by the Red Hat Security Response Team. It checks system security configuration settings, and examines systems for signs of compromise by using rules based on standards and specifications. 
 
 == Chapter 2
 
