@@ -4,10 +4,21 @@
 
 image::vertical-logo.svg[align="center"]
 
-== OpenSCAP Features
+== Features
 
 OpenSCAP verifies the presence of patches by using content produced by the Red Hat Security Response Team. It checks system security configuration settings, and examines systems for signs of compromise by using rules based on standards and specifications. 
 
-== Chapter 2
+== Requirements
 
+To effectively use OpenSCAP, the following must be available:
+ * A tool (to verify that a system conforms to a standard)
+ * Satellite Server 5.5 and later use OpenSCAP as an auditing feature
+ * SCAP content
+
+=== Requirements
 abcd
+
+== Creating your own content
+
+You can generate your own SCAP content if you have an understanding of at least XCCDF or OVAL. XCCDF content is also
+frequently published online under open source licenses, and you can customize this content to suit your needs instead. 
