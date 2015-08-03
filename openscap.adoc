@@ -8,6 +8,9 @@ image::vertical-logo.svg[align="center"]
 
 OpenSCAP verifies the presence of patches by using content produced by the Red Hat Security Response Team. It checks system security configuration settings, and examines systems for signs of compromise by using rules based on standards and specifications. 
 
+The SCAP (Security Certification and Authorization Package) is a line of specifications maintained by the NIST (National Institute of Standards and Technology) for maintaining system security for enterprise systems.
+OpenSCAP is an auditing tool that uilizes the XCCDF (Extensible Configuration Checklist Description Format) what is a standard way of expressing checklist content and defines security checklists. It also combines with other specifications such as CPE (Common Platform Enumeration), CCE (Common Configuration Enumeration), OVAL (Open Vulnerability and Assessment Language) to create a SCAP-expressed checklist that can be processed by SCAP-validated products.
+
 == Requirements
 
 To effectively use OpenSCAP, the following must be available:
