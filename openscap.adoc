@@ -16,15 +16,13 @@ OpenSCAP checks system security configuration settings, and examines systems for
 
 OpenSCAP is an auditing tool that utilizes the XCCDF (Extensible Configuration Checklist Description Format) what is a standard way of expressing checklist content and defines security checklists. It also combines with other specifications such as CPE (Common Platform Enumeration), CCE (Common Configuration Enumeration), OVAL (Open Vulnerability and Assessment Language) to create a SCAP-expressed checklist that can be processed by SCAP-validated products.
 
-
 == Prerequisities for OpenSCAP
 
 To effectively use OpenSCAP, the following must be available::
 
- . A tool (to verify that a system conforms to a standard)
- . Satellite Server 5.5 and later use OpenSCAP as an auditing feature
- . SCAP content
-
+ . A tool (Oscap Command Line or SCAP Workbench)
+ . Satellite Server 5.5 and later (use OpenSCAP as an auditing feature)
+ . SCAP content (XCCDF, OVAL...)
 
 == OSCAP Command Line Tool
 
@@ -98,11 +96,14 @@ When the SCAP content is represented by multiple XML files, the OVAL Definition 
 Where united_states_government_configuration_baseline represents a profile in the XCCDF document, usgcb-rhel5desktop-xccdf.xml is a file specifying the XCCDF document, usgcb-rhel5desktop-oval.xml is the OVAL Definition file, usgcb-rhel5desktop-oval.xml-0.variables-0.xml is the file containing exported variables from the XCCDF file, and usgcb-results-oval.xml is the the OVAL Result file. 
 ****
 
+== SCAP Content
+
+You can generate your own SCAP content if you have an understanding of at least XCCDF or OVAL. XCCDF content is also frequently published online under open source licenses, and you can customize this content to suit your needs instead.
+
+=== XCCDF content
+
+
+
 == SCAP Workbench
 
 *SCAP Workbench* is a GUI application with scanning and tailoring capabilities. Its alternative is oscap command line.
-
-== Creating your own content
-
-You can generate your own SCAP content if you have an understanding of at least XCCDF or OVAL. XCCDF content is also
-frequently published online under open source licenses, and you can customize this content to suit your needs instead. 
