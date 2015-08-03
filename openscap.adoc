@@ -91,6 +91,14 @@ When the SCAP content is represented by multiple XML files, the OVAL Definition 
 Where united_states_government_configuration_baseline represents a profile in the XCCDF document, usgcb-rhel5desktop-xccdf.xml is a file specifying the XCCDF document, usgcb-rhel5desktop-oval.xml is the OVAL Definition file, usgcb-rhel5desktop-oval.xml-0.variables-0.xml is the file containing exported variables from the XCCDF file, and usgcb-results-oval.xml is the the OVAL Result file. 
 ****
 
+== Generating Reports and Guides
+
+Another useful features of oscap is the ability to generate SCAP content in a human-readable format. The oscap utility allows you to transform an XML file into the HTML or plain-text format. This feature is used to generate security guides and checklists, which serve as a source of information, as well as guidance for secure system configuration. The results of system scans can also be transformed to well-readable result reports. The general command syntax is the following: 
+
+ $ oscap module generate sub-module [specific_module/sub-module_options_and_arguments] file
+
+where module is either xccdf or oval, sub-module is a type of the generated document, and file represents an XCCDF or OVAL file. 
+
 == SCAP Content
 
 Before you can start using the oscap utility effectively, you also have to install or import some security content on your system. You can download SCAP content from the respective web site, or if specified as an RPM file or package, you can install it from the specified location, or known repository, using the Yum package manager. 
@@ -104,7 +112,7 @@ OSCAP can display information about the SCAP contents within a file. Such as the
  
 This command allows you to install all packages required by oscap to function properly, including the openscap package, which provides the utility itself. 
 
-=== XCCDF content
+
 
 
 
