@@ -42,9 +42,7 @@ To display the version of oscap, supported specifications, built-in CPE names an
 Prior using the oscap tool, you have to install SCAP content on your system. You can download the SCAP content from the respective web site or you can install it using a package management system implemented in by your Linux distribution.
 
  $ dnf install openscap-utils
-
 or
- 
  $ yum install openscap-utils
 
 ==== Proces the content
