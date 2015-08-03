@@ -8,6 +8,7 @@ image::vertical-logo.svg[align="center"]
 
 The SCAP (Security Certification and Authorization Package) is a line of specifications maintained by the NIST (National Institute of Standards and Technology) for maintaining system security for enterprise systems.
 
+SCAP was created to provide a standardized approach to maintaining system security, and the standards that are used will therefore continually change to meet the needs of the community and enterprise businesses. New specifications are governed by NIST's SCAP Release cycle in order to provide a consistent and repeatable revision workflow. 
 
 == What is OpenSCAP
 
