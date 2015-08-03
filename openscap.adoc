@@ -21,7 +21,6 @@ OpenSCAP is an auditing tool that utilizes the XCCDF (Extensible Configuration C
 To effectively use OpenSCAP, the following must be available::
 
  . A tool (Oscap Command Line or SCAP Workbench)
- . Satellite Server 5.5 and later (use OpenSCAP as an auditing feature)
  . SCAP content (XCCDF, OVAL...)
 
 == OSCAP Command Line Tool
