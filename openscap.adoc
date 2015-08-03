@@ -137,3 +137,7 @@ This section demonstrates practical usage of certain security content provided f
 
 === 7.1 Auditing Security Vulnerabilities of Red Hat Products
 === 7.2 Auditing System Settings with SCAP Security Guide
+=== 7.3 How to Evaluate Defense Information Systems Agency (DISA) Security Technical Implementation Guide (STIG) on Red Hat Enterprise Linux 5
+=== 7.4 How to Evaluate United States Government Configuration Baseline (USGCB) on Red Hat Enterprise Linux 5
+=== 7.5 How to Evaluate Third-Party Guidances 
+=== 7.6 How to run vulnerability can on Red Hat Enterprise Linux 
