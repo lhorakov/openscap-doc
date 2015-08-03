@@ -94,6 +94,9 @@ When the SCAP content is represented by multiple XML files, the OVAL Definition 
 
  $ oscap oval eval --variables usgcb-rhel5desktop-oval.xml-0.variables-0.xml --results usgcb-results-oval.xml usgcb-rhel5desktop-oval.xml
 
+****
+Where united_states_government_configuration_baseline represents a profile in the XCCDF document, usgcb-rhel5desktop-xccdf.xml is a file specifying the XCCDF document, usgcb-rhel5desktop-oval.xml is the OVAL Definition file, usgcb-rhel5desktop-oval.xml-0.variables-0.xml is the file containing exported variables from the XCCDF file, and usgcb-results-oval.xml is the the OVAL Result file. 
+****
 
 == SCAP Workbench
 
