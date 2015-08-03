@@ -37,10 +37,10 @@ For information about oscap capabilities and complete list of options, refer to 
  $ man oscap
 
 === Using OSCAP
-*Install SCAP Content* :: 
+Install SCAP Content:: 
 Prior using the oscap tool, you have to install SCAP content on your system. You can download the SCAP content from the respective web site or you can install it using a package management system implemented in by your Linux distribution.
 
-*Proces the content* :: 
+Proces the content:: 
 When the SCAP content is imported or installed on your system, oscap can process the content by specifying the file pathh to the content. The oscap tool supports SCAP 1.2 and is backward compatible with SCAP 1.1 and 1.0. No special treatment is required in order to import and process earlier versions of the SCAP content.
 
 To display the version of oscap, supported specifications, built-in CPE names and supported OVAL objects:
