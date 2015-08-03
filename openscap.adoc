@@ -28,20 +28,24 @@ To effectively use OpenSCAP, the following must be available::
 
 The *oscap* is a command line tool that allows users to load, scan, validate, edit and export SCAP documents. Its alternative is SCAP Workbench GUI.
 
-=== Common OSCAP Operations
-
+****
 For information about oscap capabilities and complete list of options, refer to the oscap manual pages:
 
  $ man oscap
 
-=== Using OSCAP
-
 To display the version of oscap, supported specifications, built-in CPE names and supported OVAL objects:
 
  $ oscap -V
+****
  
 ==== Install SCAP Content
 Prior using the oscap tool, you have to install SCAP content on your system. You can download the SCAP content from the respective web site or you can install it using a package management system implemented in by your Linux distribution.
+
+ $ dnf install openscap-utils
+
+or
+ 
+ $ yum install openscap-utils
 
 ==== Proces the content
 When the SCAP content is imported or installed on your system, oscap can process the content by specifying the file pathh to the content. The oscap tool supports SCAP 1.2 and is backward compatible with SCAP 1.1 and 1.0. No special treatment is required in order to import and process earlier versions of the SCAP content.
