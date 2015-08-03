@@ -86,6 +86,15 @@ The SCAP document can have a form of a single OVAL file (an OVAL Definition file
 Where ds.xml is the given data stream, xccdf.xml is an XCCDF file specifying the OVAL component, oval-results.xml is the OVAL Result file, and scap-ds.xml is a file representing the SCAP data stream collection.
 ****
 
+==== Multiple XML Files
+
+When the SCAP content is represented by multiple XML files, the OVAL Definition file can be distributed along with the XCCDF file. In such a situation, OVAL definitions may depend on variables that are exported from the XCCDF file during the scan, and separate evaluation of the OVAL definition(s) would produce misleading results. Therefore, any external variables has to be exported to a special file that is used during the OVAL definitions evaluation. The following commands are examples of this scenario:
+
+ $ oscap xccdf export-oval-variables --profile united_states_government_configuration_baseline usgcb-rhel5desktop-xccdf.xml
+
+ $ oscap oval eval --variables usgcb-rhel5desktop-oval.xml-0.variables-0.xml --results usgcb-results-oval.xml usgcb-rhel5desktop-oval.xml
+
+
 == SCAP Workbench
 
 *SCAP Workbench* is a GUI application with scanning and tailoring capabilities. Its alternative is oscap command line.
