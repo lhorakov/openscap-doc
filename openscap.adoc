@@ -58,6 +58,11 @@ Example demonstrates usage of the command:
 
  $ oscap info usgcb-rhel5desktop-ds.xml
 
+== Scanning with OSCAP
+
+The main goal of the oscap tool is to perform configuration and vulnerability scans of a local system. Oscap is able to evaluate both XCCDF benchmarks and OVAL definitions and generate the appropriate results.
+**Please note that SCAP content can be provided either in a single file (as an OVAL file or SCAP Data Stream), or as multiple separate XML files.**
+
 == SCAP Workbench
 
 *SCAP Workbench* is a GUI application with scanning and tailoring capabilities. Its alternative is oscap command line.
