@@ -112,9 +112,17 @@ OSCAP can display information about the SCAP contents within a file. Such as the
  
 This command allows you to install all packages required by oscap to function properly, including the openscap package, which provides the utility itself. 
 
+==== Validating SCAP Content
 
+Before you start using a security policy on your systems, you should first verify the policy in order to avoid any possible syntax or semantic errors in the policy. The oscap utility can be used to validate the security content against standard SCAP XML schemas. The validation results are printed to the standard error stream (stderr). The general syntax of such a validation command is the following:
 
+ $ scap module validate [module_options_and_arguments] file
+ 
+where file is the full path to the file being validated. The only exception is the data stream module (ds), which uses the sds-validate operation instead of validate.
 
+****
+Note that all SCAP components within the given data stream are validated automatically and none of the components is specified separately.
+****
 
 == SCAP Workbench
 
