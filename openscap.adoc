@@ -57,6 +57,8 @@ The main goal of the oscap tool is to perform configuration and vulnerability sc
 
 SCAP content can be provided either in a single file (as an OVAL file or SCAP Data Stream), or as multiple separate XML files.
 
+ $ oscap [options] module eval [module_operation_options_and_arguments]
+
 === Single Oval File
 
 The SCAP document can have a form of a single OVAL file (an OVAL Definition file). The oscap tool processes the OVAL Definition file during evaluation of OVAL definitions. The tool collects system information, evaluates it and generates an OVAL Result file. The result of evaluation of each OVAL definition is printed to standard output stream. The following examples describe the most common scenarios involving an OVAL Definition file:
