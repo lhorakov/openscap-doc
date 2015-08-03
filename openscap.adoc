@@ -61,7 +61,14 @@ Example demonstrates usage of the command:
 == Scanning with OSCAP
 
 The main goal of the oscap tool is to perform configuration and vulnerability scans of a local system. Oscap is able to evaluate both XCCDF benchmarks and OVAL definitions and generate the appropriate results.
-**Please note that SCAP content can be provided either in a single file (as an OVAL file or SCAP Data Stream), or as multiple separate XML files.**
+
+=== Single and Multiple Files
+
+SCAP content can be provided either in a single file (as an OVAL file or SCAP Data Stream), or as multiple separate XML files.
+
+==== Single Oval File
+
+The SCAP document can have a form of a single OVAL file (an OVAL Definition file). The oscap tool processes the OVAL Definition file during evaluation of OVAL definitions. The tool collects system information, evaluates it and generates an OVAL Result file. The result of evaluation of each OVAL definition is printed to standard output stream. The following examples describe the most common scenarios involving an OVAL Definition file. 
 
 == SCAP Workbench
 
