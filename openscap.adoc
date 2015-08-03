@@ -42,18 +42,18 @@ To display the version of oscap, supported specifications, built-in CPE names an
 
  $ oscap -V
  
-==== Install SCAP Content:: 
+==== Install SCAP Content
 Prior using the oscap tool, you have to install SCAP content on your system. You can download the SCAP content from the respective web site or you can install it using a package management system implemented in by your Linux distribution.
 
-==== Proces the content:: 
+==== Proces the content
 When the SCAP content is imported or installed on your system, oscap can process the content by specifying the file pathh to the content. The oscap tool supports SCAP 1.2 and is backward compatible with SCAP 1.1 and 1.0. No special treatment is required in order to import and process earlier versions of the SCAP content.
 
-==== Displaying information about SCAP Content:: 
+==== Displaying information about SCAP Content
 OSCAP can display information about the SCAP contents within a file. Such as the document type, specification version, status, when the document was generated (published) or imported (copied).
 
  $ oscap info
-
-==== Displaying information about Profiles/Checklists/Streams::
+ 
+==== Displaying information about Profiles/Checklists/Streams
 Example demonstrates usage of the command:
 
  $ oscap info usgcb-rhel5desktop-ds.xml
