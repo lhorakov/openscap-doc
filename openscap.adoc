@@ -4,26 +4,26 @@
 
 image::vertical-logo.svg[align="center"]
 
-== What is SCAP
+== 1.0 What is SCAP
 
 The SCAP (Security Certification and Authorization Package) is a line of specifications maintained by the NIST (National Institute of Standards and Technology) for maintaining system security for enterprise systems.
 
 SCAP was created to provide a standardized approach to maintaining system security, and the standards that are used will therefore continually change to meet the needs of the community and enterprise businesses. New specifications are governed by NIST's SCAP Release cycle in order to provide a consistent and repeatable revision workflow. 
 
-== What is OpenSCAP
+== 2.0 What is OpenSCAP
 
 OpenSCAP checks system security configuration settings, and examines systems for signs of compromise by using rules based on standards and specifications.
 
 OpenSCAP is an auditing tool that utilizes the XCCDF (Extensible Configuration Checklist Description Format) what is a standard way of expressing checklist content and defines security checklists. It also combines with other specifications such as CPE (Common Platform Enumeration), CCE (Common Configuration Enumeration), OVAL (Open Vulnerability and Assessment Language) to create a SCAP-expressed checklist that can be processed by SCAP-validated products.
 
-== Prerequisities for OpenSCAP
+== 2.1 Prerequisities for OpenSCAP
 
 To effectively use OpenSCAP, the following must be available::
 
  . A tool (Oscap Command Line or SCAP Workbench)
  . SCAP content (XCCDF, OVAL...)
 
-== OSCAP Command Line Tool
+== 3.0 OSCAP Command Line Tool
 
 The *oscap* is a command line tool that allows users to load, scan, validate, edit and export SCAP documents. Its alternative is SCAP Workbench GUI.
 
@@ -37,7 +37,7 @@ To display the version of oscap, supported specifications, built-in CPE names an
  $ oscap -V
 ****
  
-==== Install SCAP Content
+==== 3.1 Install SCAP Content
 Prior using the oscap tool, you have to install SCAP content on your system. You can download the SCAP content from the respective web site or you can install it using a package management system implemented in by your Linux distribution.
 
  $ dnf install openscap-utils
@@ -46,12 +46,12 @@ or
 
 When the SCAP content is imported or installed on your system, oscap can process the content by specifying the file path to the content. The oscap tool supports SCAP 1.2 and is backward compatible with SCAP 1.1 and 1.0. No special treatment is required in order to import and process earlier versions of the SCAP content.
 
-==== Displaying information about Profiles/Checklists/Streams
+==== 3.2 Displaying information about Profiles/Checklists/Streams
 Example demonstrates usage of the command:
 
  $ oscap info usgcb-rhel5desktop-ds.xml
 
-== Scanning with OSCAP
+== 4.0 Scanning with OSCAP
 
 The main goal of the oscap tool is to perform configuration and vulnerability scans of a local system. Oscap is able to evaluate both XCCDF benchmarks and OVAL definitions and generate the appropriate results.
 
@@ -59,7 +59,7 @@ SCAP content can be provided either in a single file (as an OVAL file or SCAP Da
 
  $ oscap [options] module eval [module_operation_options_and_arguments]
 
-=== Single Oval File
+=== 4.1 Single Oval File
 
 The SCAP document can have a form of a single OVAL file (an OVAL Definition file). The oscap tool processes the OVAL Definition file during evaluation of OVAL definitions. The tool collects system information, evaluates it and generates an OVAL Result file. The result of evaluation of each OVAL definition is printed to standard output stream. The following examples describe the most common scenarios involving an OVAL Definition file:
 
@@ -79,7 +79,7 @@ The SCAP document can have a form of a single OVAL file (an OVAL Definition file
 Where ds.xml is the given data stream, xccdf.xml is an XCCDF file specifying the OVAL component, oval-results.xml is the OVAL Result file, and scap-ds.xml is a file representing the SCAP data stream collection.
 ****
 
-=== Multiple XML Files
+=== 4.2 Multiple XML Files
 
 When the SCAP content is represented by multiple XML files, the OVAL Definition file can be distributed along with the XCCDF file. In such a situation, OVAL definitions may depend on variables that are exported from the XCCDF file during the scan, and separate evaluation of the OVAL definition(s) would produce misleading results. Therefore, any external variables has to be exported to a special file that is used during the OVAL definitions evaluation. The following commands are examples of this scenario:
 
@@ -91,7 +91,7 @@ When the SCAP content is represented by multiple XML files, the OVAL Definition 
 Where united_states_government_configuration_baseline represents a profile in the XCCDF document, usgcb-rhel5desktop-xccdf.xml is a file specifying the XCCDF document, usgcb-rhel5desktop-oval.xml is the OVAL Definition file, usgcb-rhel5desktop-oval.xml-0.variables-0.xml is the file containing exported variables from the XCCDF file, and usgcb-results-oval.xml is the the OVAL Result file. 
 ****
 
-== Generating Reports and Guides
+== 5.0 Generating Reports and Guides
 
 Another useful features of oscap is the ability to generate SCAP content in a human-readable format. The oscap utility allows you to transform an XML file into the HTML or plain-text format. This feature is used to generate security guides and checklists, which serve as a source of information, as well as guidance for secure system configuration. The results of system scans can also be transformed to well-readable result reports. The general command syntax is the following: 
 
@@ -99,20 +99,21 @@ Another useful features of oscap is the ability to generate SCAP content in a hu
 
 where module is either xccdf or oval, sub-module is a type of the generated document, and file represents an XCCDF or OVAL file. 
 
-== SCAP Content
+
+== 6.0 SCAP Content
 
 Before you can start using the oscap utility effectively, you also have to install or import some security content on your system. You can download SCAP content from the respective web site, or if specified as an RPM file or package, you can install it from the specified location, or known repository, using the Yum package manager. 
 
 You can generate your own SCAP content if you have an understanding of at least XCCDF or OVAL. XCCDF content is also frequently published online under open source licenses, and you can customize this content to suit your needs instead.
 
-==== Displaying information about SCAP Content
+==== 6.1 Displaying information about SCAP Content
 OSCAP can display information about the SCAP contents within a file. Such as the document type, specification version, status, when the document was generated (published) or imported (copied).
 
  $ oscap info
  
 This command allows you to install all packages required by oscap to function properly, including the openscap package, which provides the utility itself. 
 
-==== Validating SCAP Content
+==== 6.2 Validating SCAP Content
 
 Before you start using a security policy on your systems, you should first verify the policy in order to avoid any possible syntax or semantic errors in the policy. The oscap utility can be used to validate the security content against standard SCAP XML schemas. The validation results are printed to the standard error stream (stderr). The general syntax of such a validation command is the following:
 
@@ -130,4 +131,9 @@ You can also enable extra Schematron-based validation if you validate OVAL speci
 
  $ oscap oval validate --schematron oval-file.xml
 
-== Practical Examples
+== 7.0 Practical Examples
+
+This section demonstrates practical usage of certain security content provided for Red Hat products. 
+
+=== 7.1 Auditing Security Vulnerabilities of Red Hat Products
+=== 7.2 Auditing System Settings with SCAP Security Guide
