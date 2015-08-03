@@ -51,6 +51,8 @@ OSCAP can display information about the SCAP contents within a file. Such as the
 
  $ oscap info
  
+This command allows you to install all packages required by oscap to function properly, including the openscap package, which provides the utility itself. 
+ 
 ==== Displaying information about Profiles/Checklists/Streams
 Example demonstrates usage of the command:
 
