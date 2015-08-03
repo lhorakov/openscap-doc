@@ -16,6 +16,7 @@ OpenSCAP checks system security configuration settings, and examines systems for
 
 OpenSCAP is an auditing tool that utilizes the XCCDF (Extensible Configuration Checklist Description Format) what is a standard way of expressing checklist content and defines security checklists. It also combines with other specifications such as CPE (Common Platform Enumeration), CCE (Common Configuration Enumeration), OVAL (Open Vulnerability and Assessment Language) to create a SCAP-expressed checklist that can be processed by SCAP-validated products.
 
+
 == Prerequisities for OpenSCAP
 
 To effectively use OpenSCAP, the following must be available:
@@ -24,11 +25,13 @@ To effectively use OpenSCAP, the following must be available:
  * Satellite Server 5.5 and later use OpenSCAP as an auditing feature
  * SCAP content
 
-=== OSCAP Command Line
+
+== OSCAP Command Line
 
 The *oscap* is a command line tool that allows users to load, scan, validate, edit and export SCAP documents. Its alternative is SCAP Workbench GUI.
 
-=== SCAP Workbench
+
+== SCAP Workbench
 
 *SCAP Workbench* is a GUI application with scanning and tailoring capabilities. Its alternative is oscap command line.
 
