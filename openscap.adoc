@@ -61,11 +61,9 @@ Example demonstrates usage of the command:
 
 The main goal of the oscap tool is to perform configuration and vulnerability scans of a local system. Oscap is able to evaluate both XCCDF benchmarks and OVAL definitions and generate the appropriate results.
 
-=== Single and Multiple Files
-
 SCAP content can be provided either in a single file (as an OVAL file or SCAP Data Stream), or as multiple separate XML files.
 
-==== Single Oval File
+=== Single Oval File
 
 The SCAP document can have a form of a single OVAL file (an OVAL Definition file). The oscap tool processes the OVAL Definition file during evaluation of OVAL definitions. The tool collects system information, evaluates it and generates an OVAL Result file. The result of evaluation of each OVAL definition is printed to standard output stream. The following examples describe the most common scenarios involving an OVAL Definition file:
 
@@ -85,7 +83,7 @@ The SCAP document can have a form of a single OVAL file (an OVAL Definition file
 Where ds.xml is the given data stream, xccdf.xml is an XCCDF file specifying the OVAL component, oval-results.xml is the OVAL Result file, and scap-ds.xml is a file representing the SCAP data stream collection.
 ****
 
-==== Multiple XML Files
+=== Multiple XML Files
 
 When the SCAP content is represented by multiple XML files, the OVAL Definition file can be distributed along with the XCCDF file. In such a situation, OVAL definitions may depend on variables that are exported from the XCCDF file during the scan, and separate evaluation of the OVAL definition(s) would produce misleading results. Therefore, any external variables has to be exported to a special file that is used during the OVAL definitions evaluation. The following commands are examples of this scenario:
 
