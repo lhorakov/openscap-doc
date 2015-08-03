@@ -118,12 +118,16 @@ Before you start using a security policy on your systems, you should first verif
 
  $ scap module validate [module_options_and_arguments] file
  
-where file is the full path to the file being validated. The only exception is the data stream module (ds), which uses the sds-validate operation instead of validate.
+where file is the full path to the file being validated. The only exception is the data stream module (ds), which uses the sds-validate operation instead of validate. So for example, it would be like:
+ 
+ $ oscap ds sds-validate scap-ds.xml
 
 ****
 Note that all SCAP components within the given data stream are validated automatically and none of the components is specified separately.
 ****
 
-== SCAP Workbench
+You can also enable extra Schematron-based validation if you validate OVAL specification. This validation method is slower but it provides deeper analysis. Run the following command to validate an OVAL document using Schematron: 
 
-*SCAP Workbench* is a GUI application with scanning and tailoring capabilities. Its alternative is oscap command line.
+ $ oscap oval validate --schematron oval-file.xml
+
+== Practical Examples
