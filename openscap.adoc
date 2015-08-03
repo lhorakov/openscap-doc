@@ -14,6 +14,7 @@ OpenSCAP is an auditing tool that uilizes the XCCDF (Extensible Configuration Ch
 == Requirements
 
 To effectively use OpenSCAP, the following must be available:
+
  * A tool (to verify that a system conforms to a standard)
  * Satellite Server 5.5 and later use OpenSCAP as an auditing feature
  * SCAP content
