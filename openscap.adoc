@@ -33,6 +33,8 @@ The *oscap* is a command line tool that allows users to load, scan, validate, ed
 === Common OSCAP Operations
 
 For information about oscap capabilities and complete list of options, refer to the oscap manual pages:
+ scap-workbench PATH_TO_SCAP_CONTENT
+
   *$ man oscap*
 
 
