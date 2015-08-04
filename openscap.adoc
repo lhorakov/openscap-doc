@@ -44,6 +44,8 @@ Prior using the oscap tool, you have to install SCAP content on your system. You
 or
  $ yum install scap-security-guide
 
+The SCAP content will be installed in /usr/share/xml/scap/ssg/content/.
+
 When the SCAP content is imported or installed on your system, oscap can process the content by specifying the file path to the content. The oscap tool supports SCAP 1.2 and is backward compatible with SCAP 1.1 and 1.0. No special treatment is required in order to import and process earlier versions of the SCAP content.
 
 ==== 3.2 Displaying information about Profiles/Checklists/Streams
