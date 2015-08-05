@@ -106,7 +106,7 @@ where module is either xccdf or oval, sub-module is a type of the generated docu
 
 Before you can start using the oscap utility effectively, you also have to install or import some security content on your system. You can download SCAP content from the respective web site, or if specified as an RPM file or package, you can install it from the specified location, or known repository, using the Yum package manager. 
 
-You can generate your own SCAP content if you have an understanding of at least XCCDF or OVAL. XCCDF content is also frequently published online under open source licenses, and you can customize this content to suit your needs instead.
+You can generate your own SCAP content if you have an understanding of at least XCCDF or OVAL. XCCDF content is also frequently published online under open source licenses, and you can customize this content to suit your needs instead. SCAP Workbench is a great tool to do the customization.
 
 ==== 6.1 Displaying information about SCAP Content
 OSCAP can display information about the SCAP contents within a file. Such as the document type, specification version, status, when the document was generated (published) or imported (copied).
