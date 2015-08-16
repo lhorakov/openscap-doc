@@ -1,0 +1,137 @@
+
+= Contribute to the OpenSCAP using Github's pull requests
+
+Let's suppose that you already have an active Github's account with username
+_adam_ and you want to fix a bug _#455_ in the _maint-1.0_ branch.  If you are
+not very familiar with the used git's command then first three chapters of the
+link:https://git-scm.com/book/en/v2[Pro Git] book could help you.
+ 
+== Fork the OpenSCAP repository
+The first thing you must do is to fork the OpenSCAP repository. You can
+do that by pressing the **Fork** button in the top-right corner on the Github's
+link:https://github.com/OpenSCAP/openscap[OpenSCAP page]. See the Github's
+link:https://help.github.com/articles/fork-a-repo/[Fork A Repo] article for
+more details.
+
+== Select the correct branch
+Once you found an issue you'd like to fix it's neccesary to determine in which
+branch the fix will go to. Be aware that the fact that a ticket says that it
+should go to branch _maint-1.2_ doesn't have to be true. It's a good practise to
+investigate the corrent branch first. Trust me that it'll save you some time.
+
+Once you have forked the repository and decided what branch your fix will go to
+you can clone your forked repository.
+
+[[app-listing]]
+[source,ruby]
+----
+$ git clone git@github.com:adam/openscap.git
+----
+
+Now you can create a new branch where you can work on your fix. Remember that
+the name of the branch will appear in the commit message when your fix is merged
+so choose the name wisely.
+
+[[app-listing]]
+[source,ruby]
+----
+$ git checkout -b fix_#455
+----
+
+== Create your fix
+Now you can work on the fix. Try to create small commits which can be easily
+reviewed and make good commit messages. The
+link:http://chris.beams.io/posts/git-commit/['How to Write a Git Commit
+Message'] article could help you with that. Make sure that you follow our link:[code
+style]. After your work on the fix is done you could push the branch with the fix to
+your forked repository but while you was working on the fix some others
+contributors could made some changes and your repository may not be up to date.
+
+== Download upstream changes before you create a pull request
+To allow smooth merge of your fix to the upstream make sure that your branch is
+build on the top of the upstream branch. That means that if you want to merge
+your fix to upstream's branch maint-1.0 then make sure that the branch maint-1.0
+in your forked repository is up to date. You can use these following steps to
+rebase your changes on top of the up to date upstream branch.
+
+[[app-listing]]
+[source,ruby]
+----
+# add remote name 'openscap' to referer to upstream repository
+$ git remote add openscap git@github.com:OpenSCAP/openscap.git
+
+# checkout to branch 'maint-1.0' in your forked repository
+git checkout maint-1.0
+
+# download and apply the upstream changes
+git pull --ff-only openscap maint-1.0
+
+# checkout back to your branch with the fix
+git checkout fix_#455
+
+# rebase your changes on the top of the updated maint-1.0 branch
+git rebase maint-1.0
+
+# push your changes to your remote forked repository
+git push --force origin/maint-1.0 fix_#455
+----
+
+== Create a new pull request
+Once you have pushed your changes you can
+link:https://help.github.com/articles/creating-a-pull-request/[create] a new
+pull request. Developers and contributor that watch the repository should now
+receive an email about a new pull request. They will review your code and
+probably leave you some comments. If there are any you should get back to your
+code and make the changes.
+
+=== Make changes in the submitted pull request
+After the review is done and one or more experienced developers is complaining
+about your code you have to do some changes. There are two ways to chage your
+code in a submitted pull request:
+
+ . Add a new commit or
+ . Edit existing commits.
+
+==== Add a new commit
+Adding a new commit is easy and I would choose this option if I would have to
+add something new like a function or a new module.
+
+==== Edit existing commits
+If you just need to fix a typo or add a condition I would choose to go back to
+the commit, where the change is needed, and use commit's ammed to change the
+commit. You can use following steps to do that.
+
+[[app-listing]]
+[source,ruby]
+----
+# show all the commits in your fix_#455 branch
+$ git rebase -i maint-1.0
+
+# replace 'pick' with 'e' at a line with commit you'd like to change
+
+# make your changes
+# vim my_source_file.c
+
+# commit your new changes
+$ git commit --amend
+
+# get back to your last commit
+$ git rebase --continue
+----
+
+
+=== Closing the pull request
+Once the pull request has been merged to upstream's branch the pull request will
+be closed automatically. Now you can delete your fix_#455 branch.
+
+[[app-listing]]
+[source,ruby]
+----
+$ git branch -d fix_#455
+----
+
+=== Closing the issue
+If your code fixed and issue that has been reported in Github's issues then add
+a special
+link:https://help.github.com/articles/closing-issues-via-commit-messages/[keyword]
+so that the issue can be closed automatically by Github.
