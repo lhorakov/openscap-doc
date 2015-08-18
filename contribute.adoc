@@ -1,5 +1,5 @@
 
-= Contribute to the OpenSCAP using Github's pull requests
+= How to Contribute to OpenSCAP
 
 Let's suppose that you already have an active Github's account with username
 _adam_ and you want to fix a bug _#455_ in the _maint-1.0_ branch.  If you are
